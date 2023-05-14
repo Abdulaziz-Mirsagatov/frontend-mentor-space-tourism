@@ -1,0 +1,203 @@
+@use 'base';
+
+body{
+    background: url("../../assets/crew/background-crew-mobile.jpg") no-repeat;
+    background-size: cover;
+}
+
+.main{
+    gap: 2em;
+
+    h1{
+        text-transform: uppercase;
+        font-weight: 400;
+        gap: 1em;
+        font-size: 1em;
+        letter-spacing: 2.7px;
+
+        span{
+            color: rgba($color: base.$secondary-color, $alpha: 0.25)
+        }
+    }
+
+    .img-container{
+        width: 100%;
+        justify-content: center;
+        border-bottom: 1px solid rgba($color: base.$secondary-color, $alpha: 0.5);
+    }
+
+    .crew-member-img{
+        width: 177.12px;
+    }
+
+    .button-container{
+        justify-content: space-between;
+        width: 80px;
+
+        .navigation-btn{
+            width: 10px;
+            aspect-ratio: 1 / 1;
+            border-radius: 50%;
+            background-color: rgba($color: base.$secondary-color, $alpha: 0.25);
+        }
+
+        .navigation-btn.active{
+            background-color: base.$main-color;
+        }
+    }
+
+    .info-section{
+        
+        h3, h2{
+            text-transform: uppercase;
+            font-family: base.$font-family-main;
+            font-weight: 400;
+        }
+
+        h3{
+            color: rgba($color: base.$secondary-color, $alpha: 0.5);
+            font-size: 1em;
+        }
+
+        h2{
+            font-size: 1.5em;
+        }
+
+        p{
+            color: base.$secondary-color;
+            font-size: 0.9375em;
+            line-height: 25px;
+            margin-top: 1em;
+            font-family: base.$font-family-extra;
+        }
+    }
+}
+
+// Tablet design
+@media (min-width: 500px) {
+    .wrapper{
+        gap: 2em;
+        align-content: space-between;
+    }
+
+    body{
+        background-image: url("../../assets/crew/background-crew-tablet.jpg");
+    }
+
+    .main{
+        padding: 0;
+
+        h1{
+            justify-self: start;
+            font-size: 1.25em;
+            letter-spacing: 3.38px;
+        }
+
+        .img-container{
+            border: 0;
+            order: 3;
+
+            .crew-member-img{
+                width: 456.37px;
+            }
+        }
+
+        .button-container{
+            order: 2;
+
+            .navigation-btn{
+                transition: background-color 0.3s;
+            }
+
+            .navigation-btn:hover{
+                background-color: rgba($color: base.$secondary-color, $alpha: 0.5);
+            }
+
+            .navigation-btn.active{
+                background-color: base.$main-color;
+            }
+        }
+
+        .info-section{
+            h3{
+                font-size: 1.5em;
+            }          
+            
+            h2{
+                font-size: 2.5em;
+            }
+
+            p{
+                line-height: 28px;
+                width: 60ch;
+            }
+        }
+    }
+}
+
+// Desktop design
+@media (min-width: 1280px) {
+    body{
+        background-image: url("../../assets/crew/background-crew-desktop.jpg");
+    }
+
+    .main{
+        width: 80%;
+        min-height: 68vh;
+        grid-template-areas: 
+        'h1 img'
+        'info-section img'
+        'btn-container img'
+        ;
+        align-content: space-between;
+        justify-items: start;
+        align-items: end;
+        
+
+        h1{
+            grid-area: h1;
+            font-size: 1.75em;
+            letter-spacing: 4.72px;
+        }
+
+        .img-container{
+            grid-area: img;
+
+            .crew-member-img{
+                width: 65%;
+                object-fit: contain;
+            }
+        }
+
+        .button-container{
+            grid-area: btn-container;
+            width: 120px;
+            padding-bottom: 4em;
+
+            .navigation-btn{
+                width: 15px;
+            }
+        }
+
+        .info-section{
+            grid-area: info-section;
+            justify-items: start;
+
+            h3{
+                font-size: 2em;
+
+            }
+            
+            h2{
+                font-size: 3.5em;
+            }
+
+            p{
+                text-align: left;
+                margin: 0;
+                font-size: 1.125em;
+                line-height: 32px;
+            }
+        }
+    }
+}

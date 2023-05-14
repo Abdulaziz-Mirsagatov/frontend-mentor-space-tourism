@@ -1,0 +1,352 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Bellefair&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+.flexbox {
+  display: flex;
+}
+
+.grid-flow {
+  display: grid;
+}
+
+.btn {
+  border: none;
+  text-align: center;
+  cursor: pointer;
+}
+
+body {
+  color: #fff;
+  font-family: "Barlow Condensed", sans-serif;
+  line-height: 1.5;
+}
+
+.wrapper {
+  min-height: 100vh;
+  width: 100%;
+  align-content: start;
+}
+
+.header {
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5em;
+}
+.header .navbar {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(40.7742px);
+}
+.header .menu-close-btn {
+  align-self: flex-end;
+  background: 0;
+}
+.header .navigation li {
+  list-style: none;
+}
+.header .navigation-link {
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  font-size: 1em;
+  letter-spacing: 2.7px;
+  text-transform: uppercase;
+}
+.header .navigation-link span {
+  font-weight: bold;
+}
+.header .menu-btn {
+  background: 0;
+}
+
+.main {
+  justify-items: center;
+  justify-self: center;
+  text-align: center;
+  width: 90%;
+  padding-bottom: 2em;
+}
+.main .info-section {
+  animation: fade 0.5s;
+}
+.main img {
+  animation: fade 0.5s;
+}
+
+@media (max-width: 500px) {
+  .navbar {
+    position: fixed;
+    padding: 2.5em 2em;
+    gap: 4em;
+    flex-direction: column;
+    top: 0;
+    height: 100%;
+    width: 70%;
+    right: -100%;
+    transition: right 0.3s;
+  }
+  .navbar.open {
+    right: 0;
+  }
+  .navigation {
+    flex-direction: column;
+    justify-content: space-around;
+    height: 30%;
+  }
+  .navigation-link {
+    gap: 0.5em;
+  }
+}
+@media (min-width: 500px) {
+  .header {
+    padding: 0;
+    padding-left: 2em;
+  }
+  .header .navigation {
+    justify-content: space-between;
+    padding: 0 3em;
+    font-size: 0.875em;
+    gap: 2em;
+  }
+  .header .navigation-link {
+    padding: 3em 0;
+  }
+  .header .navigation-link::after {
+    content: "";
+    transform: scaleX(0);
+    width: 0;
+    background-color: #D0D6F9;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    transition: transform 0.3s;
+  }
+  .header .navigation-link:hover::after {
+    transform: scaleX(1);
+  }
+  .header .navigation-link.active::after {
+    transition: 0.3s;
+    transform: scaleX(1);
+    content: "";
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+  }
+  .header .navigation-link span {
+    display: none;
+  }
+  .header .menu-btn, .header .menu-close-btn {
+    display: none;
+  }
+}
+@media (min-width: 1280px) {
+  .header {
+    padding: 2em 0 2em 2.5em;
+  }
+  .header .line {
+    position: absolute;
+    left: 10%;
+    height: 0.5px;
+    background-color: #D0D6F9;
+    opacity: 50%;
+    width: 37%;
+    z-index: 2;
+  }
+  .header .navigation {
+    padding: 0 12em 0 8em;
+    font-size: 1em;
+    gap: 3em;
+  }
+  .header .navigation-link {
+    gap: 0.5em;
+    padding: 2em 0;
+  }
+  .header .navigation-link span {
+    display: block;
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+body {
+  background: url("../../assets/crew/background-crew-mobile.jpg") no-repeat;
+  background-size: cover;
+}
+
+.main {
+  gap: 2em;
+}
+.main h1 {
+  text-transform: uppercase;
+  font-weight: 400;
+  gap: 1em;
+  font-size: 1em;
+  letter-spacing: 2.7px;
+}
+.main h1 span {
+  color: rgba(208, 214, 249, 0.25);
+}
+.main .img-container {
+  width: 100%;
+  justify-content: center;
+  border-bottom: 1px solid rgba(208, 214, 249, 0.5);
+}
+.main .crew-member-img {
+  width: 177.12px;
+}
+.main .button-container {
+  justify-content: space-between;
+  width: 80px;
+}
+.main .button-container .navigation-btn {
+  width: 10px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: rgba(208, 214, 249, 0.25);
+}
+.main .button-container .navigation-btn.active {
+  background-color: #fff;
+}
+.main .info-section h3, .main .info-section h2 {
+  text-transform: uppercase;
+  font-family: "Bellefair", serif;
+  font-weight: 400;
+}
+.main .info-section h3 {
+  color: rgba(208, 214, 249, 0.5);
+  font-size: 1em;
+}
+.main .info-section h2 {
+  font-size: 1.5em;
+}
+.main .info-section p {
+  color: #D0D6F9;
+  font-size: 0.9375em;
+  line-height: 25px;
+  margin-top: 1em;
+  font-family: "Barlow";
+}
+
+@media (min-width: 500px) {
+  .wrapper {
+    gap: 2em;
+    align-content: space-between;
+  }
+  body {
+    background-image: url("../../assets/crew/background-crew-tablet.jpg");
+  }
+  .main {
+    padding: 0;
+  }
+  .main h1 {
+    justify-self: start;
+    font-size: 1.25em;
+    letter-spacing: 3.38px;
+  }
+  .main .img-container {
+    border: 0;
+    order: 3;
+  }
+  .main .img-container .crew-member-img {
+    width: 456.37px;
+  }
+  .main .button-container {
+    order: 2;
+  }
+  .main .button-container .navigation-btn {
+    transition: background-color 0.3s;
+  }
+  .main .button-container .navigation-btn:hover {
+    background-color: rgba(208, 214, 249, 0.5);
+  }
+  .main .button-container .navigation-btn.active {
+    background-color: #fff;
+  }
+  .main .info-section h3 {
+    font-size: 1.5em;
+  }
+  .main .info-section h2 {
+    font-size: 2.5em;
+  }
+  .main .info-section p {
+    line-height: 28px;
+    width: 60ch;
+  }
+}
+@media (min-width: 1280px) {
+  body {
+    background-image: url("../../assets/crew/background-crew-desktop.jpg");
+  }
+  .main {
+    width: 80%;
+    min-height: 68vh;
+    grid-template-areas: "h1 img" "info-section img" "btn-container img";
+    align-content: space-between;
+    justify-items: start;
+    align-items: end;
+  }
+  .main h1 {
+    grid-area: h1;
+    font-size: 1.75em;
+    letter-spacing: 4.72px;
+  }
+  .main .img-container {
+    grid-area: img;
+  }
+  .main .img-container .crew-member-img {
+    width: 65%;
+    object-fit: contain;
+  }
+  .main .button-container {
+    grid-area: btn-container;
+    width: 120px;
+    padding-bottom: 4em;
+  }
+  .main .button-container .navigation-btn {
+    width: 15px;
+  }
+  .main .info-section {
+    grid-area: info-section;
+    justify-items: start;
+  }
+  .main .info-section h3 {
+    font-size: 2em;
+  }
+  .main .info-section h2 {
+    font-size: 3.5em;
+  }
+  .main .info-section p {
+    text-align: left;
+    margin: 0;
+    font-size: 1.125em;
+    line-height: 32px;
+  }
+}/*# sourceMappingURL=crew.css.map */

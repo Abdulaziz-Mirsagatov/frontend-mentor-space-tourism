@@ -1,0 +1,238 @@
+@use 'base';
+
+body{
+    background: url("../../assets/destination/background-destination-mobile.jpg") no-repeat;
+    background-size: cover;
+}
+
+.main{
+    justify-items: center;
+    gap: 2em;
+
+    h1{
+        text-transform: uppercase;
+        font-weight: 400;
+        gap: 1em;
+        font-size: 1em;
+        letter-spacing: 2.7px;
+
+        span{
+            color: rgba($color: base.$secondary-color, $alpha: 0.25)
+        }
+    }
+
+    img{
+        width: 170px;
+    }
+
+    .info-section{
+        justify-items: center;
+        gap: 2em;
+
+        .navigation{
+            flex-direction: row;
+            justify-content: space-between;
+            width: min(95%, 240px);
+
+            li{
+            list-style: none;
+            }
+
+            .navigation-link{
+                position: relative;
+                text-decoration: none;
+                color: base.$secondary-color;
+                text-transform: uppercase;
+                padding: 1em 0;
+                font-size: 0.875em;
+                letter-spacing: 2.36px;
+            }
+
+            .navigation-link.active{
+                color: inherit;
+            }
+
+            .navigation-link.active::after{
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                height: 3px;
+                width: 100%;
+                background-color: base.$main-color;
+            }
+        }
+
+        h2{
+            text-transform: uppercase;
+            font-family: base.$font-family-main;
+            font-weight: 400;
+            font-size: 3.5em;
+        }
+
+        .container{
+            justify-items: center;
+        }
+
+        p{
+            color: base.$secondary-color;
+            font-size: 0.9375em;
+            line-height: 25px;
+            width: 90%;
+            padding-bottom: 2em;
+            border-bottom: 1px solid rgba($color: base.$main-color, $alpha: 0.3);
+            font-family: base.$font-family-extra;
+        }
+
+        .planet-info-container{
+            flex-direction: column;
+            gap: 2em;
+
+            .container{
+                gap: 0.2em;
+            }
+
+            h4{
+                font-weight: 400;  
+                text-transform: uppercase;
+                color: base.$secondary-color;
+                font-size: 0.875em;
+            }
+
+            h3{
+                font-weight: 400;
+                text-transform: uppercase;
+                font-family: base.$font-family-main;
+                font-size: 1.75em;
+            }
+        }
+    }
+}
+
+// Tablet design{
+@media (min-width: 500px){
+    .wrapper{
+        gap: 2em;
+    }
+
+    body{
+        background-image: url("../../assets/destination/background-destination-tablet.jpg");
+    }
+
+    .main{
+        gap: 4em;
+
+        h1{
+            justify-self: start;
+            font-size: 1.25em;
+            letter-spacing: 3.38px;
+        }
+
+        img{
+            width: 300px;
+        }
+
+        .info-section{
+            .navigation{
+                width: min(95%, 300px);
+
+                .navigation-link{
+                    font-size: 1em;
+                    letter-spacing: 2.7px;
+                    position: relative;
+                }
+
+                .navigation-link::after{
+                    transition: transform 0.3s;
+                }
+
+                .navigation-link:not(.active)::after{
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 3px;
+                    background-color: rgba($color: base.$secondary-color, $alpha: 0.25);
+                    transform: scaleX(0);
+                }
+
+                .navigation-link:hover::after{
+                    transform: scaleX(1);
+                }
+            }
+
+            h2{
+                font-size: 5em;
+            }
+
+            p{
+                width: 70%;
+                font-size: 1em;
+                line-height: 28px;
+                padding-bottom: 3em;
+            }
+
+            .planet-info-container{
+                flex-direction: row;
+                gap: 5em;
+
+                h4{
+                    letter-spacing: 2.36px;
+                }
+            }
+        }
+        
+    }
+}
+
+// Desktop design{
+@media (min-width: 1280px){
+    .wrapper{
+        padding-bottom: 0em;
+        row-gap: 0;
+    }
+
+    body{
+        background-image: url("../../assets/destination/background-destination-desktop.jpg");
+    }
+
+    .main{
+        grid-template-columns: 1.5fr 1fr;
+        column-gap: 0;
+        row-gap: 2em;
+        align-items: end;
+        max-width: 1225px;
+    
+        h1{
+            grid-column: 1 / 3;
+            justify-self: start;
+            font-size: 1.75em;
+            letter-spacing: 4.72px;
+        }
+
+        img{
+            width: 55%;
+        }
+
+        .info-section{
+            justify-items: start;
+            align-content: space-between;
+            height: 450px;
+
+            .container{
+                justify-items: start;
+                gap: 0;
+
+                h2{
+                    font-size: 6.25em;
+                }
+
+                p{
+                    text-align: left;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

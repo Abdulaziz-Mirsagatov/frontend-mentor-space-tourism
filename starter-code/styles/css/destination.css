@@ -1,0 +1,391 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Bellefair&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+.flexbox {
+  display: flex;
+}
+
+.grid-flow {
+  display: grid;
+}
+
+.btn {
+  border: none;
+  text-align: center;
+  cursor: pointer;
+}
+
+body {
+  color: #fff;
+  font-family: "Barlow Condensed", sans-serif;
+  line-height: 1.5;
+}
+
+.wrapper {
+  min-height: 100vh;
+  width: 100%;
+  align-content: start;
+}
+
+.header {
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5em;
+}
+.header .navbar {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(40.7742px);
+}
+.header .menu-close-btn {
+  align-self: flex-end;
+  background: 0;
+}
+.header .navigation li {
+  list-style: none;
+}
+.header .navigation-link {
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  font-size: 1em;
+  letter-spacing: 2.7px;
+  text-transform: uppercase;
+}
+.header .navigation-link span {
+  font-weight: bold;
+}
+.header .menu-btn {
+  background: 0;
+}
+
+.main {
+  justify-items: center;
+  justify-self: center;
+  text-align: center;
+  width: 90%;
+  padding-bottom: 2em;
+}
+.main .info-section {
+  animation: fade 0.5s;
+}
+.main img {
+  animation: fade 0.5s;
+}
+
+@media (max-width: 500px) {
+  .navbar {
+    position: fixed;
+    padding: 2.5em 2em;
+    gap: 4em;
+    flex-direction: column;
+    top: 0;
+    height: 100%;
+    width: 70%;
+    right: -100%;
+    transition: right 0.3s;
+  }
+  .navbar.open {
+    right: 0;
+  }
+  .navigation {
+    flex-direction: column;
+    justify-content: space-around;
+    height: 30%;
+  }
+  .navigation-link {
+    gap: 0.5em;
+  }
+}
+@media (min-width: 500px) {
+  .header {
+    padding: 0;
+    padding-left: 2em;
+  }
+  .header .navigation {
+    justify-content: space-between;
+    padding: 0 3em;
+    font-size: 0.875em;
+    gap: 2em;
+  }
+  .header .navigation-link {
+    padding: 3em 0;
+  }
+  .header .navigation-link::after {
+    content: "";
+    transform: scaleX(0);
+    width: 0;
+    background-color: #D0D6F9;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    transition: transform 0.3s;
+  }
+  .header .navigation-link:hover::after {
+    transform: scaleX(1);
+  }
+  .header .navigation-link.active::after {
+    transition: 0.3s;
+    transform: scaleX(1);
+    content: "";
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+  }
+  .header .navigation-link span {
+    display: none;
+  }
+  .header .menu-btn, .header .menu-close-btn {
+    display: none;
+  }
+}
+@media (min-width: 1280px) {
+  .header {
+    padding: 2em 0 2em 2.5em;
+  }
+  .header .line {
+    position: absolute;
+    left: 10%;
+    height: 0.5px;
+    background-color: #D0D6F9;
+    opacity: 50%;
+    width: 37%;
+    z-index: 2;
+  }
+  .header .navigation {
+    padding: 0 12em 0 8em;
+    font-size: 1em;
+    gap: 3em;
+  }
+  .header .navigation-link {
+    gap: 0.5em;
+    padding: 2em 0;
+  }
+  .header .navigation-link span {
+    display: block;
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+body {
+  background: url("../../assets/destination/background-destination-mobile.jpg") no-repeat;
+  background-size: cover;
+}
+
+.main {
+  justify-items: center;
+  gap: 2em;
+}
+.main h1 {
+  text-transform: uppercase;
+  font-weight: 400;
+  gap: 1em;
+  font-size: 1em;
+  letter-spacing: 2.7px;
+}
+.main h1 span {
+  color: rgba(208, 214, 249, 0.25);
+}
+.main img {
+  width: 170px;
+}
+.main .info-section {
+  justify-items: center;
+  gap: 2em;
+}
+.main .info-section .navigation {
+  flex-direction: row;
+  justify-content: space-between;
+  width: min(95%, 240px);
+}
+.main .info-section .navigation li {
+  list-style: none;
+}
+.main .info-section .navigation .navigation-link {
+  position: relative;
+  text-decoration: none;
+  color: #D0D6F9;
+  text-transform: uppercase;
+  padding: 1em 0;
+  font-size: 0.875em;
+  letter-spacing: 2.36px;
+}
+.main .info-section .navigation .navigation-link.active {
+  color: inherit;
+}
+.main .info-section .navigation .navigation-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background-color: #fff;
+}
+.main .info-section h2 {
+  text-transform: uppercase;
+  font-family: "Bellefair", serif;
+  font-weight: 400;
+  font-size: 3.5em;
+}
+.main .info-section .container {
+  justify-items: center;
+}
+.main .info-section p {
+  color: #D0D6F9;
+  font-size: 0.9375em;
+  line-height: 25px;
+  width: 90%;
+  padding-bottom: 2em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  font-family: "Barlow";
+}
+.main .info-section .planet-info-container {
+  flex-direction: column;
+  gap: 2em;
+}
+.main .info-section .planet-info-container .container {
+  gap: 0.2em;
+}
+.main .info-section .planet-info-container h4 {
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #D0D6F9;
+  font-size: 0.875em;
+}
+.main .info-section .planet-info-container h3 {
+  font-weight: 400;
+  text-transform: uppercase;
+  font-family: "Bellefair", serif;
+  font-size: 1.75em;
+}
+
+@media (min-width: 500px) {
+  .wrapper {
+    gap: 2em;
+  }
+  body {
+    background-image: url("../../assets/destination/background-destination-tablet.jpg");
+  }
+  .main {
+    gap: 4em;
+  }
+  .main h1 {
+    justify-self: start;
+    font-size: 1.25em;
+    letter-spacing: 3.38px;
+  }
+  .main img {
+    width: 300px;
+  }
+  .main .info-section .navigation {
+    width: min(95%, 300px);
+  }
+  .main .info-section .navigation .navigation-link {
+    font-size: 1em;
+    letter-spacing: 2.7px;
+    position: relative;
+  }
+  .main .info-section .navigation .navigation-link::after {
+    transition: transform 0.3s;
+  }
+  .main .info-section .navigation .navigation-link:not(.active)::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: rgba(208, 214, 249, 0.25);
+    transform: scaleX(0);
+  }
+  .main .info-section .navigation .navigation-link:hover::after {
+    transform: scaleX(1);
+  }
+  .main .info-section h2 {
+    font-size: 5em;
+  }
+  .main .info-section p {
+    width: 70%;
+    font-size: 1em;
+    line-height: 28px;
+    padding-bottom: 3em;
+  }
+  .main .info-section .planet-info-container {
+    flex-direction: row;
+    gap: 5em;
+  }
+  .main .info-section .planet-info-container h4 {
+    letter-spacing: 2.36px;
+  }
+}
+@media (min-width: 1280px) {
+  .wrapper {
+    padding-bottom: 0em;
+    row-gap: 0;
+  }
+  body {
+    background-image: url("../../assets/destination/background-destination-desktop.jpg");
+  }
+  .main {
+    grid-template-columns: 1.5fr 1fr;
+    column-gap: 0;
+    row-gap: 2em;
+    align-items: end;
+    max-width: 1225px;
+  }
+  .main h1 {
+    grid-column: 1/3;
+    justify-self: start;
+    font-size: 1.75em;
+    letter-spacing: 4.72px;
+  }
+  .main img {
+    width: 55%;
+  }
+  .main .info-section {
+    justify-items: start;
+    align-content: space-between;
+    height: 450px;
+  }
+  .main .info-section .container {
+    justify-items: start;
+    gap: 0;
+  }
+  .main .info-section .container h2 {
+    font-size: 6.25em;
+  }
+  .main .info-section .container p {
+    text-align: left;
+    width: 100%;
+  }
+}/*# sourceMappingURL=destination.css.map */

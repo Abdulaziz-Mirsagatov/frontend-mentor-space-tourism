@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+
+  <link rel="stylesheet" href="./styles/css/technology.css">
+  
+  <title>Frontend Mentor | Space tourism website</title>
+</head>
+<body>
+
+  <div class="wrapper grid-flow">
+    <header class="header flexbox">
+      <a href="index.html" class="home-link">
+        <svg class="logo" xmlns="http://www.w3.org/2000/svg" width="48" height="48"><g fill="none" fill-rule="evenodd"><circle cx="24" cy="24" r="24" fill="#FFF"/><path fill="#0B0D17" d="M24 0c0 16-8 24-24 24 15.718.114 23.718 8.114 24 24 0-16 8-24 24-24-16 0-24-8-24-24z"/></g></svg>
+      </a>
+      <div class="line"></div>
+      <nav class="navbar flexbox">
+        <button class="menu-close-btn btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"><g fill="#D0D6F9" fill-rule="evenodd"><path d="M2.575.954l16.97 16.97-2.12 2.122L.455 3.076z"/><path d="M.454 17.925L17.424.955l2.122 2.12-16.97 16.97z"/></g></svg>
+        </button>
+        <ul class="navigation flexbox">
+          <li><a href="index.html" class="navigation-link flexbox"><span>00</span>Home</a></li>
+          <li><a href="destination-moon.html" class="navigation-link flexbox"><span>01</span>Destination</a></li>
+          <li><a href="crew-engineer.html" class="navigation-link flexbox"><span>02</span>Crew</a></li>
+          <li><a href="technology-spaceport.html" class="navigation-link flexbox active"><span>03</span>Technology</a></li>
+        </ul>
+      </nav>
+      <button class="menu-btn btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="21"><g fill="#D0D6F9" fill-rule="evenodd"><path d="M0 0h24v3H0zM0 9h24v3H0zM0 18h24v3H0z"/></g></svg>
+      </button>
+    </header>
+
+    <main class="main grid-flow">
+      <h1 class="flexbox"><span>03</span> Space Lauch 101</h1>
+      <img class="technology-img" src="./assets/technology/image-launch-vehicle-landscape.jpg" alt="Space lauch image">
+      <img class="technology-img-desktop" src="./assets/technology/image-launch-vehicle-portrait.jpg" alt="space launch image">
+      <div class="container flexbox">
+        <div class="button-container flexbox">
+          <a href="technology-vehicle.html" class="navigation-link"><button class="btn navigation-btn active">1</button></a>
+          <a href="technology-spaceport.html" class="navigation-link"><button class="btn navigation-btn">2</button></a>
+          <a href="technology-capsule.html" class="navigation-link"><button class="btn navigation-btn">3</button></a>
+        </div>
+        <section class="info-section grid-flow">
+          <h3>The terminology...</h3>
+          <h2>LAUNCH VEHICLE</h2>
+          <p>A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth's surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, it's quite an awe-inspiring sight on the launch pad!</p>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="./main.js"></script>
+</body>
+</html>

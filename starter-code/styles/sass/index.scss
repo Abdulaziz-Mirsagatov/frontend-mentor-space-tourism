@@ -1,0 +1,132 @@
+@use 'base';
+
+.wrapper{
+    gap: 2em;
+}
+    
+body{
+    background: url("../../assets/home/background-home-mobile.jpg") no-repeat;
+    background-size: cover;
+}
+
+.main{
+    padding-bottom: 3em;
+    gap: 16em;
+}
+
+.info-section{
+    justify-items: center;
+
+    h2{
+        font-weight: 400;
+        font-size: 1em;
+        letter-spacing: 2.7px;
+        color: base.$secondary-color;
+        text-transform: uppercase;
+    }
+
+    h1{
+        font-size: 5em;
+        font-weight: 400;
+        font-family: base.$font-family-main;
+        text-transform: uppercase;
+    }
+
+    p{
+        color: base.$secondary-color;
+        line-height: 25px;
+        font-size: 1em;
+        width: 45ch;
+        font-family: base.$font-family-extra;
+    }
+}
+
+.explore-btn{
+    width: 150px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    font-size: 1.25em;
+    letter-spacing: 1.25px;
+    background-color: base.$main-color;
+    animation: fade 0.5s;
+}
+
+// Tablet design
+@media (min-width: 500px) {
+    .wrapper{
+        gap: 6em;
+    }
+    
+    body{
+        background-image: url("../../assets/home/background-home-tablet.jpg");
+    }   
+
+    .main{
+        padding-bottom: 6em;
+    }
+
+    .info-section{
+        h2{
+            font-size: 1.25em;
+            letter-spacing: 3.38px;
+        }
+
+        h1{
+            font-size: 9.375em;
+        }
+
+        p{
+            line-height: 28px;
+            width: 60ch;
+        }
+    }
+
+    .explore-btn{
+        width: 242px;
+        font-size: 2em;
+        transition: box-shadow 0.3s;
+    }
+
+    .explore-btn:hover{
+        box-shadow: 0 0 0 50px rgba($color: base.$main-color, $alpha: 0.2);
+    }
+}
+
+// Desktop design
+@media (min-width: 1280px) {
+    .wrapper{
+        align-content: space-between;
+    }
+
+    body{
+        background-image: url("../../assets/home/background-home-desktop.jpg");
+    }
+
+    .main{
+        width: 80%;
+        grid-template-columns: 1fr 1fr;
+        align-items: end;
+        padding-bottom: 5em;
+    }
+
+    .info-section{
+        justify-items: start;
+        text-align: left;
+
+        h2{
+            font-size: 1.75em;
+        }
+
+        p{
+            font-size: 1.125em;
+            line-height: 32px;
+            width: 55ch;
+        }
+    }
+
+    .explore-btn{
+        width: 274px;
+        font-size: 2em;
+        justify-self: end;
+    }
+}
